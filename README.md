@@ -25,3 +25,11 @@ topic write on 13
 Main re-writing on 21 again
 
 main write on 21
+
+
+Results:
+I found that it's only editing the same line  which gives merge conflicts.
+Feature branch editing line 20 and main adding a new line on 10 does not cause merge conflict, even though feature didn't think its edit was line 21.
+git is smart with line add/remove.
+"Require linear commit history" branch protection rule does not "force rebase". Squash commit is also linear history, as if a feature branch's commits were just added on top of main.
+A good workflow is probably best off rebasing feature branch locally to main and repeating manual testing with newer main, then continue to PR. Lack of merge conflicts does not guarantee functional code.
